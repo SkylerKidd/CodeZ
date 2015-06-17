@@ -6,20 +6,24 @@ version = '1.0'
 print 'Hello, and welcome to Dice Simulator v' + version
 
 # Checks if user input was a valid format
-def validInput(input):
+def validInput(dVal):
     return True #pass
 
 # Roll and print result
-def diceRoll(input):
+def diceRoll(dVal):
     pass
+
+# Checks if user wants to play again
+def playAgain():
+
 
 # Main loop
 while(True):
     print 'Please input the value to want to roll.'
     print 'Format: #d# where # is an int, 0 to 20'
-    print 'Input: ',
-    input = 0 #= user input
-    if not validInput(input):
+    dVal = input('Input: ')
+    if not validInput(dVal):
         print 'Invalid input.'
         continue
-    diceRoll(input)
+    diceRoll(dVal)
+    playAgain()
