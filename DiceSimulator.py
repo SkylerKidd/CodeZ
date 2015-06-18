@@ -13,11 +13,22 @@ def validInput(dVal):
 
 # Roll and print result
 def diceRoll(dVal):
-    pass
+    dIndex = 0
+    for i in range(len(dVal)):
+        if dVal[i] == 'd':
+            dIndex = i
+    dice = int(dVal[0:dIndex])
+    sides = int(dVal[dIndex+1:len(dVal)])
+    rollSum = 0
+    for r in range(dice):
+        rollVal = random.randint(1, sides)
+        print 'Roll', r+1, ':', rollVal
+        rollSum += rollVal
+    print 'Sum: ', rollSum
 
 # Main loop
 while(True):
-    dVal = input('Input: ')
+    dVal = raw_input('Input: ')
     if dVal == 'exit':
         sys.exit()
     if dVal == 'help':
