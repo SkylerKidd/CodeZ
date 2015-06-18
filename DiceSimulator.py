@@ -1,10 +1,12 @@
+# Python 3.4
+
 import random, sys
 
 version = '1.0'
 
 # Intro Statement
-print 'Hello, and welcome to Dice Simulator v' + version
-print 'Please input the value to want to roll.'
+print ('Hello, and welcome to Dice Simulator v' + version)
+print ('Please input the value to want to roll.')
 
 # Checks if user input was a valid format
 def validInput(dVal):
@@ -22,18 +24,18 @@ def diceRoll(dVal):
     rollSum = 0
     for r in range(dice):
         rollVal = random.randint(1, sides)
-        print 'Roll', r+1, ':', rollVal
+        print ('Roll', r+1, ':', rollVal)
         rollSum += rollVal
-    print 'Sum: ', rollSum
+    print ('Sum: ', rollSum)
 
 # Main loop
 while(True):
-    dVal = raw_input('Input: ')
+    dVal = input('Input: ')
     if dVal == 'exit':
         sys.exit()
     if dVal == 'help':
-        print 'Format: #d# where # is an int, 0 to 20'
+        print ('Format: #d# where # is an int, 0 to 20')
     if not validInput(dVal):
-        print 'Please input a valid command. (\'help\' for format)'
+        print ('Please input a valid command. (\'help\' for format)')
         continue
     diceRoll(dVal)
