@@ -9,14 +9,14 @@ print ('Hello, and welcome to Dice Simulator v' + version)
 print ('Please input the value to want to roll.')
 
 # Checks if user input was a valid format
-def validInput(dVal):
+def valid_input(in_command):
     # Check format: "[int 1-10]d[int 2-20]"
     # check for proper format length
-    if (len(dVal) < 3 or len(dVal) > 5):
+    if (len(in_command) < 3 or len(in_command) > 5):
         return False #fail
     # check for integer type
     try:
-        val1, val2 = dVal.split('d')
+        val1, val2 = in_command.split('d')
     except ValueError:
         return False #fail
     try:
@@ -34,27 +34,27 @@ def validInput(dVal):
     return True #pass
 
 # Roll and print result
-def diceRoll(dVal):
-    rollSum = 0
+def diceRoll(in_command):
+    roll_sum = 0
 
-    dice, sides = dVal.split('d')
+    dice, sides = in_command.split('d')
     dice = int(dice)
     sides = int(sides)
 
     for r in range(dice):
-        rollVal = random.randint(1, sides)
-        print ('Roll', r+1, ':', rollVal)
-        rollSum += rollVal
-    print ('Sum: ', rollSum)
+        roll_value = random.randint(1, sides)
+        print ('Roll', r+1, ':', roll_value)
+        roll_sum += roll_value
+    print ('Sum: ', roll_sum)
 
 # Main loop
 while(True):
-    dVal = input('Input: ')
-    if dVal == 'exit':
+    in_command = input('Input: ')
+    if in_command == 'exit':
         sys.exit()
-    if dVal == 'help':
+    if in_command == 'help':
         print ('Format: #d# where # is an int, 0 to 20')
-    if not validInput(dVal):
+    if not valid_input(in_command):
         print ('Please input a valid command. (\'help\' for format)')
         continue
-    diceRoll(dVal)
+    diceRoll(in_command)
