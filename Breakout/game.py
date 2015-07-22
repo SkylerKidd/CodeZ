@@ -36,6 +36,9 @@ class Game(object):
         #Paddle
         self.paddle = 0
 
+        #Ball
+        self.ball = Ball(self.screen_width, self.screen_height)
+
     def update(self):
         self.clock.tick(game_speed)
 
