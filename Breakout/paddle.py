@@ -16,9 +16,11 @@ class Paddle(object):
 
         #ITS A RECTANGLE
         self.rect = (self.x, self.y, self.width, self.height)
+        self.shadow_rect = (self.x+3, self.y+3, self.width, self.height)
 
         #Color
         self.color = color
+        self.shadow_color = bkg_color
 
     #Update Function
     def update(self):
@@ -26,4 +28,5 @@ class Paddle(object):
 
     #Drawing Things
     def draw(self, screen):
-    	pygame.draw.rect(screen, self.color, self.rect, 0)
+    	pygame.draw.rect(screen, self.shadow_color, self.shadow_rect, 0)
+        pygame.draw.rect(screen, self.color, self.rect, 0)

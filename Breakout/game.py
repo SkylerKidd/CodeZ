@@ -7,6 +7,7 @@ from paddle import Paddle
 
 # Color Pallet
 blue = (73,145,232)
+blue_shadow = (43, 115, 202)
 purple = (232,73,225)
 orange = (232,160,73)
 green = (73,232,74)
@@ -35,10 +36,10 @@ class Game(object):
 				self.blocks.append(Block(self.screen_width, self.screen_height, w, h))
 
         #Paddle
-        self.paddle = Paddle(self.screen_width, self.screen_height, purple, blue)
+        self.paddle = Paddle(self.screen_width, self.screen_height, purple, blue_shadow)
 
         #Ball
-        self.ball = Ball(self.screen_width, self.screen_height, green, blue)
+        self.ball = Ball(self.screen_width, self.screen_height, green, blue_shadow)
 
     def update(self):
         self.clock.tick(game_speed)

@@ -18,6 +18,8 @@ class Ball(object):
         self.linked = linked
 
         self.color = color
+        self.shadow_color = bkg_color
+
 
     #update ball position
     def update(self):
@@ -30,4 +32,5 @@ class Ball(object):
         self.y_vel *= y_multiplier
 
     def draw(self, screen):
-		pygame.draw.circle(screen, self.color, (self.x, self.y), self.r, 0)
+        pygame.draw.circle(screen, self.shadow_color, (self.x+3, self.y+3), self.r, 0)
+        pygame.draw.circle(screen, self.color, (self.x, self.y), self.r, 0)
