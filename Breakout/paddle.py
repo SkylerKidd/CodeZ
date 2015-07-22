@@ -2,7 +2,7 @@ import pygame
 
 #I PUT THIS IN CAUSE EVERYONE ELSE DID (knowledge of screen and start point?)
 class Paddle(object):
-    def __init__(self, screen_width, screen_height):
+    def __init__(self, screen_width, screen_height, color, bkg_color):
         self.screen_width = screen_width
         self.screen_height = screen_height
 
@@ -18,7 +18,7 @@ class Paddle(object):
         self.rect = (self.x, self.y, self.width, self.height)
 
         #Color
-        self.color = (232,73,225)
+        self.color = color
 
         #Update Function
         def update(self):
