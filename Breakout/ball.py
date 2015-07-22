@@ -31,6 +31,10 @@ class Ball(object):
         self.x_vel *= x_multiplier
         self.y_vel *= y_multiplier
 
+    #set ball velocity when "linked"
+    def set_x_vel(self, x_vel):
+        self.x_vel = x_vel
+
     def draw(self, screen):
         pygame.draw.circle(screen, self.shadow_color, (self.x+3, self.y+3), self.r, 0)
         pygame.draw.circle(screen, self.color, (self.x, self.y), self.r, 0)
