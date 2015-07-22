@@ -1,7 +1,7 @@
 import pygame
 
 class Ball(object):
-    def __init__(self, screen_width, screen_height):
+    def __init__(self, screen_width, screen_height, color, bkg_color):
         self.screen_width = screen_width
         self.screen_height = screen_height
 
@@ -17,8 +17,7 @@ class Ball(object):
 
         self.linked = True
 
-        #(color is green)
-        self.color = (73,232,74)
+        self.color = color
 
     #update ball position
     def update(self):
