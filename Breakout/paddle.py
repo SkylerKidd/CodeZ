@@ -20,10 +20,10 @@ class Paddle(object):
         #Color
         self.color = color
 
-        #Update Function
-        def update(self):
-            self.x += self.x_vel
+    #Update Function
+    def update(self):
+        self.x += self.x_vel
 
-        #Drawing Things
-        def draw(self, screen):
-    		pygame.draw.rect(screen, self.color, self.rect, 0)
+    #Drawing Things
+    def draw(self, screen):
+    	pygame.draw.rect(screen, self.color, self.rect, 0)
