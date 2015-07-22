@@ -6,7 +6,7 @@ class Ball(object):
         self.screen_height = screen_height
 
         #DECIDE WHAT RADIUS SHOULD BE
-        self.r = 15
+        self.r = 5
 
         self.x = screen_width / 2
         self.y = screen_height - 30
