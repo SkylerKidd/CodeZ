@@ -1,4 +1,5 @@
 import pygame
+import random
 
 class Ball(object):
     def __init__(self, screen_width, screen_height, color, bkg_color, linked = True):
@@ -40,6 +41,8 @@ class Ball(object):
 
     def serve(self):
         self.linked = False
+        self.x_vel = random.randint(-5, 5)
+        self.y_vel = random.randint(-8, -5)
 
     def draw(self, screen):
         pygame.draw.circle(screen, self.shadow_color, (self.x+3, self.y+3), self.r, 0)
