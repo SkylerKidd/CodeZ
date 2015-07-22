@@ -1,7 +1,7 @@
 # ProjectCodeZ
-Python 3.4
 
 ## Dice Simulator
+Python 3.4
 
 This is a simple command line application that allows users to input values for a roll of dice. User inputs both number of dice (1-10) and number of sides (2-20). The results are then printed out.
 
@@ -18,7 +18,11 @@ Roll 3 : 4
 Sum:  13
 ```
 
+## Breakout
+Python 2.7 and Pygame
 
-## Text-Based Zombies
-
-## 2D Top-down Zombies
+#####To play:
+```
+cd Breakout/
+python game.py
+```
