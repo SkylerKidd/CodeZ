@@ -35,7 +35,7 @@ class Game(object):
 				self.blocks.append(Block(self.screen_width, self.screen_height, w, h))
 
         #Paddle
-        self.paddle = Ball(self.screen_width, self.screen_height)
+        self.paddle = Paddle(self.screen_width, self.screen_height, purple, blue)
 
         #Ball
         self.ball = Ball(self.screen_width, self.screen_height, green, blue)
