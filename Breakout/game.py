@@ -3,6 +3,7 @@ from pygame.locals import *
 import random, sys
 from block import Block
 from ball import Ball
+from paddle import Paddle
 
 # Color Pallet
 blue = (73,145,232)
@@ -34,7 +35,7 @@ class Game(object):
 				self.blocks.append(Block(self.screen_width, self.screen_height, w, h))
 
         #Paddle
-        self.paddle = 0
+        self.paddle = Ball(self.screen_width, self.screen_height)
 
         #Ball
         self.ball = Ball(self.screen_width, self.screen_height, green, blue)
