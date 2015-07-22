@@ -13,7 +13,7 @@ orange = (232,160,73)
 green = (73,232,74)
 
 # Game Speed
-game_speed = 20
+game_speed = 40
 
 class Game(object):
     """Main program"""
@@ -72,6 +72,18 @@ class Game(object):
                 if event.type == QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+						self.ball.serve()
+                    if event.key == pygame.K_LEFT:
+                        self.paddle.x_vel = -4
+                    elif event.key == pygame.K_RIGHT:
+                        self.paddle.x_vel = 4
+                if event.type == pygame.KEYUP:
+                    if event.key == pygame.K_LEFT and self.paddle.x_vel < 0:
+                        self.paddle.x_vel = 0
+                    if event.key == pygame.K_RIGHT and self.paddle.x_vel > 0:
+                        self.paddle.x_vel = 0
             self.update()
             self.draw()
             pygame.display.update()
