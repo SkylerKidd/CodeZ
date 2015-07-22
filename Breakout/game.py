@@ -33,7 +33,7 @@ class Game(object):
         self.blocks = list()
         for w in range(1,self.screen_width,50):
 			for h in range(23, 198, 22):
-				self.blocks.append(Block(self.screen_width, self.screen_height, w, h, blue, blue_shadow))
+				self.blocks.append(Block(self.screen_width, self.screen_height, w, h, orange, blue_shadow))
 
         #Paddle
         self.paddle = Paddle(self.screen_width, self.screen_height, purple, blue_shadow)

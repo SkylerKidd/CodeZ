@@ -28,5 +28,5 @@ class Paddle(object):
 
     #Drawing Things
     def draw(self, screen):
-    	pygame.draw.rect(screen, self.shadow_color, self.shadow_rect, 0)
+        pygame.draw.rect(screen, self.shadow_color, self.shadow_rect, 0)
         pygame.draw.rect(screen, self.color, self.rect, 0)
