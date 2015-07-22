@@ -7,7 +7,7 @@ class Paddle(object):
         self.screen_height = screen_height
 
         #Actual Size of Object
-        self.width, self.height = 30, 5
+        self.width, self.height = 80, 15
 
         #Not Entirely Sure...something about velocity
         self.x = (screen_width / 2) - (self.width / 2)
