@@ -24,15 +24,17 @@ class Paddle(object):
 
     #Update Function
     def update(self):
+
+        #Paddle reaches left side
         if self.x <= 0 and not self.x_vel > 0:
             self.x_vel = 0
+
+        #Paddle reaches right side
         if self.x >= (self.screen_width-self.width) and not self.x_vel < 0:
             self.x_vel = 0
 
         self.x += self.x_vel
-
         self.rect = (self.x, self.y, self.width, self.height)
-
         self.shadow_rect = (self.x+3, self.y+3, self.width, self.height)
 
 
