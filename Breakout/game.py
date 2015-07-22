@@ -50,6 +50,9 @@ class Game(object):
         for block in self.blocks:
             block.draw(self.screen)
 
+        self.ball.draw(self.screen)
+        self.paddle.draw(self.screen)
+
     def new_game(self):
         self.game_over = False
         self.round = 0
