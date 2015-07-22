@@ -13,7 +13,7 @@ orange = (232,160,73)
 green = (73,232,74)
 
 # Game Speed
-game_speed = 2
+game_speed = 20
 
 class Game(object):
     """Main program"""
@@ -43,6 +43,9 @@ class Game(object):
 
     def update(self):
         self.clock.tick(game_speed)
+
+        self.paddle.update()
+        self.ball.update()
 
     def draw(self):
         #Redraw Background
