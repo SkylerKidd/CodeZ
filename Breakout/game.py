@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 import random, sys
 from block import Block
+from ball import Ball
 
 # Color Pallet
 blue = (73,145,232)
