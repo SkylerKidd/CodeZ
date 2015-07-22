@@ -45,7 +45,7 @@ class Game(object):
         self.clock.tick(game_speed)
 
         self.paddle.update()
-        self.ball.update()
+        self.ball.update(self.paddle)
 
     def draw(self):
         #Redraw Background

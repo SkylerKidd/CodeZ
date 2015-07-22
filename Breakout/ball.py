@@ -22,7 +22,10 @@ class Ball(object):
 
 
     #update ball position
-    def update(self):
+    def update(self, paddle):
+        if self.linked:
+            self.x_vel = paddle.x_vel
+
         self.x += self.x_vel
         self.y += self.y_vel
 
@@ -34,6 +37,9 @@ class Ball(object):
     #set ball velocity when "linked"
     def set_x_vel(self, x_vel):
         self.x_vel = x_vel
+
+    def serve(self):
+        self.linked = False
 
     def draw(self, screen):
         pygame.draw.circle(screen, self.shadow_color, (self.x+3, self.y+3), self.r, 0)
