@@ -16,5 +16,7 @@ class Block(object):
         self.shadow_color = bkg_color
 
     def draw(self, screen):
-        pygame.draw.rect(screen, self.shadow_color, self.shadow_rect, 0)
         pygame.draw.rect(screen, self.color, self.rect, 0)
+
+    def draw_shadow(self, screen):
+        pygame.draw.rect(screen, self.shadow_color, self.shadow_rect, 0)

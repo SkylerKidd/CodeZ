@@ -55,5 +55,7 @@ class Ball(object):
         self.y_vel = random.randint(-8, -5)
 
     def draw(self, screen):
-        pygame.draw.circle(screen, self.shadow_color, (self.x+3, self.y+3), self.r, 0)
         pygame.draw.circle(screen, self.color, (self.x, self.y), self.r, 0)
+
+    def draw_shadow(self, screen):
+        pygame.draw.circle(screen, self.shadow_color, (self.x+3, self.y+3), self.r, 0)

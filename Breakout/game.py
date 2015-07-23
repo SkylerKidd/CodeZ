@@ -52,10 +52,17 @@ class Game(object):
         self.screen.fill(blue)
 
         for block in self.blocks:
+            block.draw_shadow(self.screen)
+
+        self.ball.draw_shadow(self.screen)
+        self.paddle.draw_shadow(self.screen)
+
+        for block in self.blocks:
             block.draw(self.screen)
 
         self.ball.draw(self.screen)
         self.paddle.draw(self.screen)
+
 
     def new_game(self):
         self.game_over = False

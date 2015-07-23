@@ -37,11 +37,12 @@ class Paddle(object):
         self.rect = (self.x, self.y, self.width, self.height)
         self.shadow_rect = (self.x+3, self.y+3, self.width, self.height)
 
-
     #Drawing Things
     def draw(self, screen):
-        pygame.draw.rect(screen, self.shadow_color, self.shadow_rect, 0)
         pygame.draw.rect(screen, self.color, self.rect, 0)
+
+    def draw_shadow(self, screen):
+        pygame.draw.rect(screen, self.shadow_color, self.shadow_rect, 0)
 
     def set_x_vel(self, x_vel):
         self.x_vel = x_vel
