@@ -29,7 +29,7 @@ class Ball(object):
             self.x_vel = paddle.x_vel
 
         #check collisions: ball -->paddle
-        if self.x >= paddle.x and self.x <= (paddle.x + paddle.width) and (self.y + self.r) >= paddle.y:
+        if self.y_vel > 0 and self.x >= paddle.x and self.x <= (paddle.x + paddle.width) and (self.y + self.r) >= paddle.y:
             self.accelerate(1,-1)
         if self.y >= paddle.y and self.y <= (paddle.y + paddle.height):
             if self.x - self.r > paddle.x and self.x - self.r <= paddle.x + paddle.width:
