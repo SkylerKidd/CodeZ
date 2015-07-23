@@ -24,14 +24,24 @@ class Ball(object):
 
     #update ball position
     def update(self, paddle):
+        #follow paddle if ball not 'served'
         if self.linked:
             self.x_vel = paddle.x_vel
+
+        #check collisions: ball --> wall
+        if self.x <= (self.r) or self.x >= (self.screen_width - self.r):
+            self.accelerate(-1, 1)
+        if self.y <= (self.r):
+            self.accelerate(1, -1)
+        if self.y >= (self.screen_height - self.r):
+            #eventually: GAME OVER
+            self.accelerate(1, -1)
 
         self.x += self.x_vel
         self.y += self.y_vel
 
     #update ball velocity
-    def accelerate(self, x_multipier, y_multiplier):
+    def accelerate(self, x_multiplier, y_multiplier):
         self.x_vel *= x_multiplier
         self.y_vel *= y_multiplier
 
