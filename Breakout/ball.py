@@ -59,9 +59,10 @@ class Ball(object):
         self.x_vel = x_vel
 
     def serve(self):
+        if self.linked == True:
+            self.x_vel = random.randint(-5, 5)
+            self.y_vel = random.randint(-8, -5)
         self.linked = False
-        self.x_vel = random.randint(-5, 5)
-        self.y_vel = random.randint(-8, -5)
 
     def draw(self, screen):
         pygame.draw.circle(screen, self.color, (self.x, self.y), self.r, 0)
