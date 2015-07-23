@@ -28,6 +28,10 @@ class Ball(object):
         if self.linked:
             self.x_vel = paddle.x_vel
 
+        #check collisions: ball -->paddle
+        if self.x >= paddle.x and self.x <= (paddle.x + paddle.width) and (self.y + self.r) >= paddle.y:
+            self.accelerate(1,-1)
+
         #check collisions: ball --> wall
         if self.x <= (self.r) or self.x >= (self.screen_width - self.r):
             self.accelerate(-1, 1)
