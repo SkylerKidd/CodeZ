@@ -31,6 +31,11 @@ class Ball(object):
         #check collisions: ball -->paddle
         if self.x >= paddle.x and self.x <= (paddle.x + paddle.width) and (self.y + self.r) >= paddle.y:
             self.accelerate(1,-1)
+        if self.y >= paddle.y and self.y <= (paddle.y + paddle.height):
+            if self.x - self.r > paddle.x and self.x - self.r <= paddle.x + paddle.width:
+                self.accelerate(-1,1)
+            elif  self.x + self.r < paddle.x + paddle.width and self.x + self.r >= paddle.x:
+                self.accelerate(-1,1)
 
         #check collisions: ball --> wall
         if self.x <= (self.r) or self.x >= (self.screen_width - self.r):
