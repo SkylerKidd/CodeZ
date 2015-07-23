@@ -21,6 +21,11 @@ class Ball(object):
         self.color = color
         self.shadow_color = bkg_color
 
+    def reset(self, paddle):
+        self.linked = True
+        self.y_vel = 0
+        self.x = paddle.x + (paddle.width / 2)
+        self.y = self.screen_height - 37
 
     #update ball position
     def update(self, paddle):
@@ -31,6 +36,10 @@ class Ball(object):
         #check collisions: ball -->paddle
         if self.y_vel > 0 and self.x >= paddle.x and self.x <= (paddle.x + paddle.width) and (self.y + self.r) >= paddle.y:
             self.accelerate(1,-1)
+            if paddle.x_vel > 0:
+                self.x_vel += 2
+            elif paddle.x_vel < 0:
+                self.x_vel -= 2
         if self.y >= paddle.y and self.y <= (paddle.y + paddle.height):
             if self.x - self.r > paddle.x and self.x - self.r <= paddle.x + paddle.width:
                 self.accelerate(-1,1)
@@ -44,25 +53,24 @@ class Ball(object):
             self.accelerate(1, -1)
         if self.y >= (self.screen_height - self.r):
             #eventually: GAME OVER
-            self.accelerate(1, -1)
+            self.reset(paddle)
 
         self.x += self.x_vel
         self.y += self.y_vel
 
     #update ball velocity
     def accelerate(self, x_multiplier, y_multiplier):
-        self.x_vel *= x_multiplier
-        self.y_vel *= y_multiplier
+        self.x_vel = int(self.x_vel * x_multiplier)
+        self.y_vel = int(self.y_vel * y_multiplier)
 
     #set ball velocity when "linked"
     def set_x_vel(self, x_vel):
         self.x_vel = x_vel
 
     def serve(self):
-        if self.linked == True:
-            self.x_vel = random.randint(-5, 5)
-            self.y_vel = random.randint(-8, -5)
         self.linked = False
+        self.x_vel = random.randint(-5, 5)
+        self.y_vel = random.randint(-8, -5)
 
     def draw(self, screen):
         pygame.draw.circle(screen, self.color, (self.x, self.y), self.r, 0)
